@@ -17,5 +17,5 @@ class UserModel(BaseModel):
     last_name:str
     is_verified: bool
     password_hash:str =Field(exclude=True)
-    created_at:datetime.v
+    created_at:datetime
     update_at:datetime

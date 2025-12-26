@@ -16,6 +16,10 @@ class UserModel(BaseModel):
     first_name:str
     last_name:str
     is_verified: bool
-    password_hash:str =Field(exclude=True)
+    password_hash:str = Field(exclude=True)
     created_at:datetime
     update_at:datetime
+
+class UserLoginModel(BaseModel):
+    email:str = Field(max_length=40)
+    password:str = Field(max_length=6)

@@ -3,3 +3,6 @@ psql -h localhost -p 5432 -U dhruv -d book_data
     "username":"testus3",
     "password":"test18"
     "email":"test@gmail.com",
+
+        "email":"tet@gmail.com",
+    "password":"tet18"

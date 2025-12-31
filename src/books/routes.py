@@ -14,6 +14,7 @@ access_token_bearer = AccessTokenBearer()
 
 @book_router.get('/',response_model=List[Book])
 async def get_all_books(session:AsyncSession = Depends(get_session),user_details=Depends(access_token_bearer)):
+    print(user_details)
     books = await book_service.get_all_books(session)
     return books
 
@@ -40,8 +41,6 @@ async def update_book(book_uid:str,update_data:BookUpdateModel,session:AsyncSess
         return updated_book
     else:
         return updated_book
-        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND,
-                        detail="book not found")
 
 
 @book_router.delete('/{book_uid}',status_code=status.HTTP_204_NO_CONTENT)
